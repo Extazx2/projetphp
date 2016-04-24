@@ -16,7 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	<!--	/////////		JS 			////////		-->	
-		<script src="js/sorttable.js"></script>
+	<!--	<script src="js/sorttable.js"></script>-->
 	
 
 	</head>
