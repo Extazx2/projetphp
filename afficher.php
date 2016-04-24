@@ -36,11 +36,13 @@
 					echo"<img src=\"../img/img".$affcol['idarticle']."png/>";
 			}
 			echo "</li>";
-			while ($affcoms = mysqli_fetch_array($afficheComms)){
+			/*while ($affcoms = mysqli_fetch_array($afficheComms)){
 				echo "Commentaires :<br/>
 					<li>
-						<h5 class =\"pseudo\">".$affcoms['pseudo']."</h5>"
-			}
+						<h5 class =\"pseudo\">".$affcoms['pseudo']."</h5>
+						<p class =\"contenu\">".$affcoms['contenu']."</p>";
+
+			}*/
 	}
 	echo "		</ul>
 			</section>

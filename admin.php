@@ -70,7 +70,7 @@
 				
 				<div class="form-group">
 					<div class="col-md-offset-2 col-md-8 col-md-offset-2">
-						<textarea name="texte" placeholder="Contenu de votre article" class="form-control" id="UserText" rows="4" cols="50"></textarea>
+						<textarea name="texte" placeholder="Contenu de votre article" class="form-control" id="UserText" rows="4" cols="50" required></textarea>
 					</div>
 				</div> 
 				
@@ -96,7 +96,7 @@
 
 				<div class="form-group">
 					<div class="col-md-offset-2 col-md-8 col-md-offset-2">
-						<textarea name="tags" placeholder="tag1 &#59; tag2 &#59; tag3" class="form-control" id="UserTag" rows="1" cols="50"></textarea>
+						<textarea name="tags" placeholder="tag1 &#59; tag2 &#59; tag3" class="form-control" id="UserTag" rows="1" cols="50" required></textarea>
 					</div>
 				</div>
 
