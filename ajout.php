@@ -1,13 +1,23 @@
 <?php
 session_start();
-
+$continue;
 /*if($_SESSION['logged'] == false){
 	header('Refresh: 3; url=connect.php'); 
 	echo "Non connecté.<br>Vous allez être redirigé vers la page de connexion dans 3 secondes.";	
 }else{*/
 	// recuparation des identifiants grace au form
 	if (isset ($_POST['valider'])){
-		if (!empty($_POST['titre']) && !empty($_POST['texte']) && $_POST['categorie']) && isset ($_POST['tags'])){
+		var_dump($_POST);
+		if ($_POST['titre'] == ""){
+			$continue = false;
+		}elseif($_POST['texte'] == ""){
+			$continue = false;
+		}elseif($_POST['tags'] == ""){
+			$continue = false;
+		}else{
+			$continue = true;
+		}
+		if ($continue == true){
 			$titre=addslashes($_POST['titre']);
 			$contenu=addslashes($_POST['texte']);
 			$categorie=$_POST['categorie'];

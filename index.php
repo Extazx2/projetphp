@@ -25,15 +25,23 @@
 	
 	if($_SESSION['logged'] == false){
 		echo "<header>
-			<h1>FindTweet</h1>
-			<div id=\"login\">
-				<a href=\"connect.php\">
-					<button type=\"button\" value=\"connect\">Connexion</button>
-				</a>
-				<a href=\"register.php\">
-					<button type=\"button\" value=\"register\" >S'enregistrer</button>
-				</a>
-			</div>
+				<div class=\"col-xs-12\">
+				<div class=\"main\">
+				<div class=\"row\">
+					<div class=\"col-xs-6 col-sm-6 col-sm-offset-1\">
+						<h1>FindTweet</h1>
+						<div id=\"login\" class=\"col-xs-6\">
+						<a href=\"connect.php\">
+							<button type=\"button\" value=\"connect\">Connexion</button>
+						</a>
+						<a href=\"register.php\">
+							<button type=\"button\" value=\"register\" >S'enregistrer</button>
+						</a>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
 		</header>";
 	}elseif ($_SESSION['logged'] == true){
 		echo "<header>
