@@ -32,7 +32,7 @@
 						<p class=\"categorie\">".$affcol['categorie']."</p>
 						<p class=\"tags\">".$affcol['tag']."</p>";
 
-			if($affcol['imgurl'] != ''){
+			if(isset($affcol['imgurl']) && !empty($affcol['imgurl'])){
 					echo"<img src=\"../img/img".$affcol['idarticle']."png/>";
 			}
 			echo "</li>";
