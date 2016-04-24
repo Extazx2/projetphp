@@ -16,14 +16,14 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	<!--	/////////		JS 			////////		-->	
-		<script src="js/list.js"></script>
+		<script src="js/sorttable.js"></script>
 	
 
 	</head>
 	<body>
 <?php session_start(); 
 	
-	if($_SESSION['logged'] == false){
+	if(@$_SESSION['logged'] == false){
 		echo "<header>
 				<div class=\"col-xs-12\">
 				<div class=\"main\">
@@ -60,5 +60,6 @@
 ?>
 	<?php include('afficher.php'); ?>
 
+	
 	</body>
 </html>

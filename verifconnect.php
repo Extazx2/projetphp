@@ -1,10 +1,10 @@
 <?php
-	session_start();
+	//session_start();
 	//cookie pour le retour sur la page d'accueil
 	$_SESSION['logged']= false;		
 
-	$dbLog = mysqli_connect("localhost", "root", "", "projetphp") or die("no CNX");
-	$login = mysqli_query($dbLog, "SELECT username, password FROM login");
+	include("dbconnect.php");
+	$login = mysqli_query($link, "SELECT username, password FROM login");
 
 if(isset($_POST["username"])){
 	$_SESSION['username'] = $_POST["username"];
@@ -17,9 +17,7 @@ if(isset($_POST["username"])){
 
 	$username = $_SESSION['username'];
 	$password = $_SESSION['password'];
-/*	$_SESSION['username']= $username;
-	$_SESSION['password']= $password;
-*/
+
 	$connectbool = false;
 
 while ($res1 = mysqli_fetch_array($login)){
@@ -32,11 +30,10 @@ while ($res1 = mysqli_fetch_array($login)){
 }
 
 if($connectbool == false){
-		$ajout = mysqli_query($dbLog, "INSERT INTO login(username, password) VALUES('$username','$password')");
+		$ajout = mysqli_query($link, "INSERT INTO login(username, password) VALUES('$username','$password')");
 		echo "Vous avez bien été enregistré !";
 		$_SESSION['logged'] = true;
 }
 	
 	mysqli_free_result($login);
-	mysqli_close($dbLog);
 ?>

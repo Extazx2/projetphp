@@ -1,8 +1,9 @@
 <?php
-	$link = mysqli_connect("localhost", "root", "", "projetphp") or die("no CNX");
+	include("js/list.js");
+	include("dbconnect.php");
 	$afficheCol = mysqli_query($link, "SELECT * FROM projet");
 	$afficheTab = mysqli_query($link, "SHOW columns FROM projet");
-	$afficheComms = mysqli_query($link, "SELECT * FROM comments");
+	$afficheComms = mysqli_query($link, "SELECT * FROM comments ");
 
 	var_dump($afficheTab);
 	var_dump($afficheCol);
@@ -21,34 +22,37 @@
 
 	echo "	</section>
 			<section id=\"fil\">
-				<ul class=\"list\">";
+				<table class=\"sorttable\">";
 
 	while ($affcol = mysqli_fetch_array($afficheCol)){
-			echo "	<li>
-						<h3 class=\"titre\">".$affcol['titre']."</h3>
-						<h4 class=\"auteur\">par ".$affcol['auteur']."</h4>
-						<p class=\"contenu\">".$affcol['contenu']."</p>
+			echo "	<tr>
+						<th class=\"titre\">".$affcol['titre']."</th>
+						<td class=\"auteur\">par ".$affcol['auteur']."</td>
+						<td class=\"contenu\">".$affcol['contenu']."</td>
 						<br>
-						<p class=\"categorie\">".$affcol['categorie']."</p>
-						<p class=\"tags\">".$affcol['tag']."</p>";
+						<td class=\"categorie\">".$affcol['categorie']."</td>
+						<td class=\"tags\">".$affcol['tag']."</td>";
 
 			if(isset($affcol['imgurl']) && !empty($affcol['imgurl'])){
-					echo"<img src=\"../img/img".$affcol['idarticle']."png/>";
+					echo"<td><img src=\"../img/img".$affcol['idarticle']."png/><td>";
 			}
-			echo "</li>";
-			/*while ($affcoms = mysqli_fetch_array($afficheComms)){
+			echo "	</tr>
+					<br/>
+					----------
+					<a href=\"comment.php\">Ajouter un commentaire ?</a>";
+			while ($affcoms = mysqli_fetch_array($afficheComms)){
 				echo "Commentaires :<br/>
-					<li>
-						<h5 class =\"pseudo\">".$affcoms['pseudo']."</h5>
-						<p class =\"contenu\">".$affcoms['contenu']."</p>";
+					<tr>
+						<th class =\"pseudo\">".$affcoms['pseudo']."</th>
+						<td class =\"contenu\">".$affcoms['contenu']."</td>
+					</tr>";
 
-			}*/
+			}
 	}
-	echo "		</ul>
+	echo "		</table>
 			</section>
 		</div>";
 
 	mysqli_free_result($afficheCol);
 	mysqli_free_result($afficheTab);
-	mysqli_close($link);
 ?>

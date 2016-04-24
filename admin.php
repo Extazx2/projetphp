@@ -26,7 +26,7 @@
 
 	</head>
 	<body>
-<?php session_start(); ?>
+<?php //session_start(); ?>
 <?php include('verifconnect.php'); ?>
 
 <!-- 		Reprise de l'html 		-->

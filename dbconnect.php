@@ -1,0 +1,1 @@
+<?php $link = mysqli_connect("localhost", "root", "", "projetphp") or die("no CNX");?>
